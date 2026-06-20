@@ -1,5 +1,5 @@
 const express=require('express');
-const { getResponse } = require('../controllers/controller');
+const { getReview } = require('../controllers/controller');
 const router=express.Router();
-router.get("./get-response",getResponse );
+router.get("/get-review",getReview );
 module.exports=router

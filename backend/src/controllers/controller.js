@@ -1,7 +1,10 @@
-const getResponse=(req,res)=>{
+const aiService=require('../utility/ai.service.js')
+const getResponse=async(req,res)=>{
 const prompt=req.query.prompt;
 if(!prompt){
     return res.status(400).json({error:"Prompt is required"})
 }
-res.json({message:"Success",prompt})
+const response=await aiService(prompt);
+res.json({message:"Success",response})
 }
+module.exports={getReview}
